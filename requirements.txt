@@ -6,6 +6,8 @@ google-auth
 google-auth-oauthlib
 google-auth-httplib2
 
+streamlit-oauth==0.1.14
+
 requests>=2.31
 
 joblib==1.5.3
