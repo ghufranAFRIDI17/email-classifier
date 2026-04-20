@@ -409,10 +409,24 @@ with tab2:
         if st.session_state.get("gmail_tokens"):
             st.success("Gmail is connected.")
         else:
-            if hasattr(st, "link_button"):
-                st.link_button("Connect Gmail", auth_url, use_container_width=True)
-            else:
-                st.markdown(f"[Connect Gmail]({auth_url})")
+            st.markdown(
+    f'''
+    <a href="{auth_url}" target="_self">
+        <button style="
+            width: 100%;
+            padding: 0.6rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+            background-color: #f0f2f6;
+            cursor: pointer;
+            font-size: 16px;
+        ">
+            Connect Gmail
+        </button>
+    </a>
+    ''',
+    unsafe_allow_html=True,
+)
 
     with col2:
         if st.button("Disconnect Gmail", use_container_width=True):
